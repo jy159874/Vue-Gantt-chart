@@ -3,7 +3,6 @@
 <p align="center">基于 Vue  实现的 gantt-like 图表 ,用于排班展示</p>
 <p align="center"></p>
 
-
 [![npm](https://img.shields.io/npm/v/v-gantt-chart.svg)](https://www.npmjs.com/package/v-gantt-chart)
 [![total](https://img.shields.io/npm/dt/v-gantt-chart.svg)](https://img.shields.io/npm/dt/v-gantt-chart.svg)
 ![](https://img.shields.io/badge/license-MIT-000000.svg)
@@ -277,7 +276,7 @@ export default {
 
 `isAcrossRenderingTimeRange(timeStart,timeEnd):boolean`
 判定给定的时间是否跨越了屏幕显示的时间轴范围之内
-  
+
 
 ### left 行名slot
 ```html
@@ -377,6 +376,7 @@ export default {
 | :---  |:-----:|:---------|
 | scrollLeft| number | X轴的滚动值|
 | scrollTop | number | Y轴的滚动值|
+| changeRenderArea | array [startTime, endTime] | 横向滚动返回可视区域开始结束时间 |
 
 </div>
 
