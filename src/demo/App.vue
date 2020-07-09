@@ -73,7 +73,7 @@
       </el-form>
     </header>
     <div class="container">
-      <v-gantt-chart
+      <vue-gantt-charts
         :startTime="times[0]"
         :endTime="times[1]"
         :cellWidth="cellWidth"
@@ -104,7 +104,7 @@
           <TestLeft :data="data"></TestLeft>
         </template>
         <template v-slot:title>铁胆火车侠日程表 </template>
-      </v-gantt-chart>
+      </vue-gantt-charts>
 <!--      <v-gantt-chart-->
 <!--        v-if="!hideSecondGantt"-->
 <!--        :startTime="times[0]"-->

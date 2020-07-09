@@ -8,7 +8,7 @@ const myPlugin = {
   // eslint-disable-next-line
     install (Vue, options) {
     // 将其注册为vue的组件，'gantt'是组件名，keyboard是我们开发的组件
-    Vue.component("v-gantt-chart", gantt);
+    Vue.component("vue-gantt-charts", gantt);
   }
 };
 // 新增

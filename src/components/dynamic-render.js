@@ -44,9 +44,9 @@ const dynamicRender = {
       const availableScrollTop =
         datas.length * cellHeight - heightOfBlocksWrapper;
       if (cellHeight > 0 && availableScrollTop < scrollTop) {
-        console.warn(
-          `错误的scrollTop值 ${scrollTop},可用滚动高度为${availableScrollTop}，代码自动矫正`
-        );
+        // console.warn(
+        //   `错误的scrollTop值 ${scrollTop},可用滚动高度为${availableScrollTop}，代码自动矫正`
+        // );
         return Math.ceil(availableScrollTop / cellHeight);
       }
       return Math.ceil(scrollTop / cellHeight);

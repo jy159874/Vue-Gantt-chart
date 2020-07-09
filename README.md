@@ -52,7 +52,7 @@
 ### npm 安装
 
 ```bash
-npm i v-gantt-chart --save
+npm i vue-gantt-charts --save
 ```
 
 Include plugin in your `main.js` file.

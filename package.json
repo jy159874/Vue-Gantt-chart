@@ -1,8 +1,8 @@
 {
-  "name": "vue-gantt-chart",
-  "version": "1.4.0",
+  "name": "vue-gantt-charts",
+  "version": "1.0.0",
   "description": "display gantt-like vaule,like use this to order bus schedule.",
-  "main": "dist/v-gantt-chart.js",
+  "main": "dist/vue-gantt-charts.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/w1301625107/Vue-Gantt-chart.git"
@@ -14,17 +14,16 @@
   "keywords": [
     "vue-gantt-chart",
     "gantt",
-    "gantt-chart",
-    "v-gantt-chart"
+    "gantt-chart"
   ],
-  "author": "wuchouchou",
+  "author": "luoyu",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run lint --fix && NODE_ENV=DEMO vue-cli-service build ",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "libbuild": "npm run lint  --fix && vue-cli-service build --target lib --name v-gantt-chart src/index.js"
+    "libbuild": "npm run lint  --fix && vue-cli-service build --target lib --name vue-gantt-charts src/index.js"
   },
   "dependencies": {
     "core-js": "^3.4.3",

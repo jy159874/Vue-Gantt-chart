@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./demo/App";
-import vGanttChart from "./index";
+import vueGanttCharts from "./index";
 // import vGanttChart from "v-gantt-chart"
 import {
   Popover,
@@ -19,7 +19,7 @@ import {
 import "element-ui/lib/theme-chalk/index.css";
 
 Vue.config.productionTip = false;
-Vue.use(vGanttChart);
+Vue.use(vueGanttCharts);
 Vue.use(Popover);
 Vue.use(DatePicker);
 Vue.use(Button);
