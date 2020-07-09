@@ -1,5 +1,5 @@
 {
-  "name": "v-gantt-chart",
+  "name": "vue-gantt-chart",
   "version": "1.4.0",
   "description": "display gantt-like vaule,like use this to order bus schedule.",
   "main": "dist/v-gantt-chart.js",
@@ -51,5 +51,8 @@
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

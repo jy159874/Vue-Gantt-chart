@@ -44,7 +44,6 @@ const dynamicRender = {
       const availableScrollTop =
         datas.length * cellHeight - heightOfBlocksWrapper;
       if (cellHeight > 0 && availableScrollTop < scrollTop) {
-        /*eslint no-console: "warn"*/
         console.warn(
           `错误的scrollTop值 ${scrollTop},可用滚动高度为${availableScrollTop}，代码自动矫正`
         );
