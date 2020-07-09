@@ -88,6 +88,7 @@
         :arrayKeys="arrayKeys"
         :scrollToPostion="positionA"
         @scrollLeft="scrollLeftA"
+        @changeRenderArea="changeRenderArea"
         :datas="datasA"
       >
         <template v-slot:block="{ data, item }">
@@ -104,66 +105,66 @@
         </template>
         <template v-slot:title>铁胆火车侠日程表 </template>
       </v-gantt-chart>
-      <v-gantt-chart
-        v-if="!hideSecondGantt"
-        :startTime="times[0]"
-        :endTime="times[1]"
-        :cellWidth="cellWidth"
-        :cellHeight="cellHeight"
-        :timeLines="timeLines"
-        :titleHeight="titleHeight"
-        :scale="scale"
-        :titleWidth="titleWidth"
-        showCurrentTime
-        hideHeader
-        :dataKey="dataKey"
-        :arrayKeys="arrayKeys"
-        :scrollToPostion="positionB"
-        @scrollLeft="scrollLeftB"
-        customGenerateBlocks
-        :datas="datasB"
-      >
-        <template
-          v-slot:block="{
-            data,
-            getPositonOffset,
-            getWidthAbout2Times,
-            isInRenderingTimeRange,
-            startTimeOfRenderArea,
-            endTimeOfRenderArea,
-            isAcrossRenderingTimeRange
-          }"
-        >
-          <div
-            class="gantt-block-item"
-            v-for="(item, index) in data.gtArray"
-            v-if="
-              isInRenderingTimeRange(item.start) ||
-                isInRenderingTimeRange(item.end) ||
-                isAcrossRenderingTimeRange(item.start, item.end)
-            "
-            :key="item.id"
-            :style="{
-              left: getPositonOffset(item.start) + 'px',
-              width: getWidthAbout2Times(item.start, item.end) + 'px'
-            }"
-          >
-            <Test
-              :data="data"
-              :updateTimeLines="updateTimeLines"
-              :cellHeight="cellHeight"
-              :currentTime="currentTime"
-              :item="item"
-            ></Test>
-          </div>
-        </template>
-        <template v-slot:left="{ data }">
-          <TestLeft :data="data"></TestLeft>
-        </template>
-        <template v-slot:title>
-          铁胆火车侠日程表
-        </template>
-      </v-gantt-chart>
+<!--      <v-gantt-chart-->
+<!--        v-if="!hideSecondGantt"-->
+<!--        :startTime="times[0]"-->
+<!--        :endTime="times[1]"-->
+<!--        :cellWidth="cellWidth"-->
+<!--        :cellHeight="cellHeight"-->
+<!--        :timeLines="timeLines"-->
+<!--        :titleHeight="titleHeight"-->
+<!--        :scale="scale"-->
+<!--        :titleWidth="titleWidth"-->
+<!--        showCurrentTime-->
+<!--        hideHeader-->
+<!--        :dataKey="dataKey"-->
+<!--        :arrayKeys="arrayKeys"-->
+<!--        :scrollToPostion="positionB"-->
+<!--        @scrollLeft="scrollLeftB"-->
+<!--        customGenerateBlocks-->
+<!--        :datas="datasB"-->
+<!--      >-->
+<!--        <template-->
+<!--          v-slot:block="{-->
+<!--            data,-->
+<!--            getPositonOffset,-->
+<!--            getWidthAbout2Times,-->
+<!--            isInRenderingTimeRange,-->
+<!--            startTimeOfRenderArea,-->
+<!--            endTimeOfRenderArea,-->
+<!--            isAcrossRenderingTimeRange-->
+<!--          }"-->
+<!--        >-->
+<!--          <div-->
+<!--            class="gantt-block-item"-->
+<!--            v-for="(item, index) in data.gtArray"-->
+<!--            v-if="-->
+<!--              isInRenderingTimeRange(item.start) ||-->
+<!--                isInRenderingTimeRange(item.end) ||-->
+<!--                isAcrossRenderingTimeRange(item.start, item.end)-->
+<!--            "-->
+<!--            :key="item.id"-->
+<!--            :style="{-->
+<!--              left: getPositonOffset(item.start) + 'px',-->
+<!--              width: getWidthAbout2Times(item.start, item.end) + 'px'-->
+<!--            }"-->
+<!--          >-->
+<!--            <Test-->
+<!--              :data="data"-->
+<!--              :updateTimeLines="updateTimeLines"-->
+<!--              :cellHeight="cellHeight"-->
+<!--              :currentTime="currentTime"-->
+<!--              :item="item"-->
+<!--            ></Test>-->
+<!--          </div>-->
+<!--        </template>-->
+<!--        <template v-slot:left="{ data }">-->
+<!--          <TestLeft :data="data"></TestLeft>-->
+<!--        </template>-->
+<!--        <template v-slot:title>-->
+<!--          铁胆火车侠日程表-->
+<!--        </template>-->
+<!--      </v-gantt-chart>-->
     </div>
     <footer class="main-footer">
       MIT ©wuchouchou<span style="float:right"
@@ -262,6 +263,9 @@ export default {
     },
     scrollLeftA(val) {
       this.positionB = { x: val };
+    },
+    changeRenderArea(time) {
+      console.log(time);
     },
     scrollLeftB(val) {
       this.positionA = { x: val };

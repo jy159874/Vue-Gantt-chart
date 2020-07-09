@@ -47,7 +47,7 @@ var template = {
           Random.character("upper") +
           Random.character("upper") +
           Random.natural(1000, 9999),
-        passenger: Random.natural(10, 200),
+        passenger: Random.natural(10, 2000),
         start: tempStart.toString(),
         end: tempEnd.toString()
       });

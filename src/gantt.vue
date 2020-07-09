@@ -550,6 +550,8 @@ export default {
       const leftValue = event.target.scrollLeft;
       this.scrollLeft = gantt_timeline.scrollLeft = gantt_table.scrollLeft = leftValue;
       gantt_markArea.style.left = -leftValue + "px";
+      // 返回显示区域
+      this.$emit('changeRenderArea', [this.startTimeOfRenderArea, this.endTimeOfRenderArea])
       this.$emit("scrollLeft", leftValue);
     }
   }
